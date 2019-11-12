@@ -18,6 +18,12 @@
 <body>
 	<h1>List users</h1>
 	<a href="register.php">Register</a>
+	<form action="#" method="POST">
+		<p>Search
+			<input type="text" name="keyword" placeholder="Please input keyword">
+			<input type="submit" name="search" value="Search">
+		</p>
+	</form>
 	<?php include 'database.php';?>
 	<?php 
 		$sqlSelect = "SELECT * FROM users";
