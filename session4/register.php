@@ -6,7 +6,7 @@
 <body>
 	<?php 
 		// connect php vs mysql
-		$server = "localhost";
+		$server = "localhost"; //$server = "127.0.0.1";
 		$username = "root";
 		$password = "none"; // $password = "";
 		$database = "19php03";
@@ -26,7 +26,7 @@
 
 			// cau lenh chen user vao db
 			$sql = "INSERT INTO users(username, password) VALUES ('$username', '$password')";
-			
+
 			// thuc thi cau lenh sql
 			mysqli_query($connect, $sql);
 
