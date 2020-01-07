@@ -13,3 +13,8 @@
 	echo "<br>";
 	echo $a;
 ?>
+
+<!-- Huy bo session -->
+<?php 
+	unset($_SESSION['name']);
+?>
