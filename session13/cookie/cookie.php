@@ -5,5 +5,6 @@
 	// Su dung cookie
 	echo $_COOKIE['name'];
 
-
+	// Loai bo cookie
+	setcookie('name', '', time() - 10);
 ?>
