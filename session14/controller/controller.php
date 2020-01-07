@@ -43,6 +43,42 @@
 					// goi 1 view cua trang add news
 					include 'view/add_news.php';
 					break;
+				case 'register':
+						if (isset($_POST['register'])) {
+							$username = $_POST['username'];
+							$password = $_POST['password'];
+							// xu ly luu users vao database
+							if ($model->addUsers($username, $password) === TRUE) {
+								header('Location: index.php?action=home');
+							}
+						}
+						# code...
+						include 'view/register.php';
+						break;	
+					case 'login':
+						if (isset($_POST['login'])) {
+							$username = $_POST['username'];
+							$password = $_POST['password'];
+							// xu ly luu users vao database
+							$err = '';
+							$login = $model->login($username, $password);
+							$login = $login->fetch_assoc();
+
+							if (!is_null($login)) {
+								$_SESSION['login'] = $login['username']; 
+								header('Location: index.php?action=home');
+							} else {
+								$err = 'Sai username hoac password';
+							}
+						}
+						# code...
+						include 'view/login.php';
+						break;
+				case 'logout':
+							unset($_SESSION['login']);
+							header('Location: index.php?action=home');
+							# code...
+							break;		
 				default:
 					# code...
 					break;

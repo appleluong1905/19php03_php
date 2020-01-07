@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 31, 2019 at 07:18 PM
+-- Generation Time: Jan 07, 2020 at 07:21 PM
 -- Server version: 5.7.28-0ubuntu0.16.04.2
 -- PHP Version: 7.2.22-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -38,8 +38,27 @@ CREATE TABLE `news` (
 
 INSERT INTO `news` (`id`, `title`, `description`) VALUES
 (1, 'News 1', 'ok men'),
-(4, 'test edit', '222234123412313'),
-(5, 'Cái khó trong phân tích bóng đá', '222234123412313uuu');
+(5, 'Đánh bại nhà cái', '222234123412313');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(10) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`) VALUES
+(1, 'admin@gmail.com', '123123'),
+(2, 'chadluong', '55555555');
 
 --
 -- Indexes for dumped tables
@@ -52,6 +71,12 @@ ALTER TABLE `news`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -60,6 +85,11 @@ ALTER TABLE `news`
 --
 ALTER TABLE `news`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -25,5 +25,14 @@
 			$sql = "INSERT INTO news(title, description) VALUES ('$title', '$description')";
 			return mysqli_query($this->connect(), $sql);
 		}
+
+		function addUsers($username, $password) {
+			$sql = "INSERT INTO users(username, password) VALUES ('$username', '$password')";
+			return mysqli_query($this->connect(), $sql);
+		}
+		function login($username, $password) {
+			$sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+			return mysqli_query($this->connect(), $sql);
+		}
 	}
 ?>

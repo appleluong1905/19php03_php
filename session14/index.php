@@ -1,3 +1,6 @@
+<?php
+	ob_start();
+ session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +16,13 @@
 		<li><a href="index.php?action=about">About</a></li>
 		<li><a href="index.php?action=news">News</a></li>
 		<li><a href="index.php?action=contact">Contact</a></li>
+		<?php if (!isset($_SESSION['login'])) {?>
+			<li><a href="index.php?action=register">Register</a></li>
+			<li><a href="index.php?action=login">Login</a></li>
+		<?php } else {?>
+			<li class="hi">Hi, <?php echo $_SESSION['login']?></li>
+			<li><a href="index.php?action=logout">Logout</li>
+		<?php }?>
 	</ul>
 	<?php 
 		include 'controller/controller.php';

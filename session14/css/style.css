@@ -11,3 +11,6 @@ ul li {
 ul li a {
 	text-decoration: none;
 }
+li.hi {
+	width: 150px;
+}
