@@ -3,6 +3,7 @@
 <!-- Khoi tao session -->
 <?php 
 	$_SESSION['name'] = '19PHP03 SDC';
+	$_SESSION['login'] = 'demo';
 ?>
 
 <!-- Su dung session -->
